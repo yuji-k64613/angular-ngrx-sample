@@ -1,5 +1,5 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { addBook, removeBook } from './books.actions';
+import { addBook, clearBookList, removeBook } from './books.actions';
  
 export const initialState: ReadonlyArray<string> = [];
  
@@ -10,5 +10,6 @@ export const collectionReducer = createReducer(
     if (state.indexOf(bookId) > -1) return state;
  
     return [...state, bookId];
-  })
+  }),
+  on(clearBookList, (state) => initialState),
 );

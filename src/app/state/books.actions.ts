@@ -14,3 +14,8 @@ export const retrievedBookList = createAction(
   '[Book List/API] Retrieve Books Success',
   props<{ Book }>()
 );
+
+export const clearBookList = createAction(
+    '[Book List/API] Clear Books Success',
+  );
+  

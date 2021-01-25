@@ -1,6 +1,11 @@
 <h2>Books</h2>
 <app-book-list class="book-list" [books]="books$ | async" (add)="onAdd($event)"></app-book-list>
 
-<h2>My Collection</h2>
+<h2>My Collection {{ counter$ | async }}</h2>
+<div *ngIf="show">
+    <button (click)="onClear()" data-test="add-button">Clear Collection</button>
+</div>
 <app-book-collection class="book-collection" [books]="bookCollection$ | async" (remove)="onRemove($event)">
 </app-book-collection>
+
+

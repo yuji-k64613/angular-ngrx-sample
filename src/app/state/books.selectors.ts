@@ -19,3 +19,11 @@ export const selectBookCollection = createSelector(
     return collection.map((id) => books.find((book) => book.id === id));
   }
 );
+
+export const selectBooksCounter = createSelector(
+    selectCollectionState,
+    (collection: Array<string>) => {
+      return collection.length;
+    }
+  );
+  
